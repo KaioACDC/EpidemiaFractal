@@ -26,3 +26,24 @@ def atualizar_plot():
     fig.canvas.flush_events()
 
 max_iter = 5000
+
+for i in range(max_iter):
+    if not epidemia:
+        break
+
+    # Escolhe um sítio de crescimento aleatoriamente
+    idx = random.randint(0, len(epidemia) - 1)
+    x, y = epidemia.pop(idx)
+
+    # Ocupa o sítio
+    rede[x, y] = 1
+
+    # Adiciona os vizinhos desocupados à lista de crescimento
+    for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < L and 0 <= ny < L and rede[nx, ny] == 0 and (nx, ny) not in epidemia:
+            epidemia.append((nx, ny))
+
+    # Atualiza o plot em tempo real
+    if i % 10 == 0:
+        atualizar_plot()
