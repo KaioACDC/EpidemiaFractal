@@ -47,3 +47,6 @@ for i in range(max_iter):
     # Atualiza o plot em tempo real
     if i % 10 == 0:
         atualizar_plot()
+
+plt.ioff()
+plt.show()
