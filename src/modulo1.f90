@@ -46,3 +46,16 @@ contains
         write(unit, "(A)")
 
         write(unit, '(5F12.6)') t, y(1), y(2), y(3), y(4)
+
+        do i = 2, pt
+            !Método de Runge-Kutta de 4 ordem
+            call sistema_e_d(t, y, k1, t_inf, t_rec)
+            call sistema_e_d(t + 0.5*h, y + 0.5*h*k1, k2, t_inf, t_rec)
+            call sistema_e_d(t + 0.5*h, y + 0.5*h*k2, k3, t_inf, t_rec)
+            call sistema_e_d(t + h, y + h*k3, k4, t_inf, t_rec)
+
+            y = y + (h/6.0)*(k1 + 2*k2 + 2*k3 + k4)
+            t = t + h
+            
+            write(unit, '(5F12.6)') t, y(1), y(2), y(3), y(4)
+        end do
