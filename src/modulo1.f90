@@ -11,3 +11,11 @@ contains
 
         
         real(8), intent(out) :: dydt(4)
+
+        if t( < 0.0) then
+            print*, "Tempo negativo"
+        end if
+        
+        
+
+    
