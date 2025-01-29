@@ -31,3 +31,7 @@ contains
         real(8), intent(in) :: y0(4)
         integer, intent(in) :: pt
         character(len=*), intent(in) :: arquivo_saida
+
+        real(8) :: h, t, y(4)
+        real(8) :: k1(4), k2(4), k3(4), k4(4)
+        integer :: i, unit
