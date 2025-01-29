@@ -12,7 +12,7 @@ contains
         
         real(8), intent(out) :: dydt(4)
 
-        if t( < 0.0) then
+        if (t < 0.0) then
             print*, "Tempo negativo"
         end if
         
@@ -59,3 +59,5 @@ contains
             
             write(unit, '(5F12.6)') t, y(1), y(2), y(3), y(4)
         end do
+    end subroutine
+end module sistema
