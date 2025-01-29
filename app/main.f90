@@ -8,3 +8,8 @@ program main
     real(8) :: t_rec = 0.1
     integer :: pt = 1000
     character(len=*), parameter :: arquivo_saida = 'dados.txt'
+
+    call kutta_sistema(delta_t, y0, t_inf, t_rec, pt, arquivo_saida)
+
+    print*, "Dados salvos em", arquivo_saida
+end program main
