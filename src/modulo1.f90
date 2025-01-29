@@ -38,4 +38,9 @@ contains
 
         open(newunit=unit, file=arquivo_saida, status='replace', action='write')
 
+        h = (delta_t(2) - delta_t(1)) / (pt - 1)
+
+        t = delta_t(1)
+        y = y0
+
         
