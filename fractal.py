@@ -25,3 +25,4 @@ def atualizar_plot():
     im.set_data(rede)
     fig.canvas.flush_events()
 
+max_iter = 5000
