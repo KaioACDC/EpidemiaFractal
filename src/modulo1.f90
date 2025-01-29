@@ -43,4 +43,6 @@ contains
         t = delta_t(1)
         y = y0
 
-        
+        write(unit, "(A)")
+
+        write(unit, '(5F12.6)') t, y(1), y(2), y(3), y(4)
