@@ -16,7 +16,7 @@ for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
         epidemia.append((x, y))
 
 plt.ion()
-fig, ax = plt.subplot()
+fig, ax = plt.subplots()
 im = ax.imshow(rede, cmap='viridis', vmin=0, vmax=1)
 plt.colorbar(im)
 ax.set_title("Crescimento pandêmico fractal")
