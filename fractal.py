@@ -18,6 +18,10 @@ for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
 plt.ion()
 fig, ax = plt.subplot()
 im = ax.imshow(rede, cmap='viridis', vmin=0, vmax=1)
-plt.colobar(im)
+plt.colorbar(im)
 ax.set_title("Crescimento pandêmico fractal")
+
+def atualizar_plot():
+    im.set_data(rede)
+    fig.canvas.flush_events()
 
