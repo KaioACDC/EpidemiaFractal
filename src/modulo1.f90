@@ -35,3 +35,7 @@ contains
         real(8) :: h, t, y(4)
         real(8) :: k1(4), k2(4), k3(4), k4(4)
         integer :: i, unit
+
+        open(newunit=unit, file=arquivo_saida, status='replace', action='write')
+
+        
